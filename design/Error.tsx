@@ -1,0 +1,45 @@
+import React from 'react'
+import { StyleSheet, View, ViewStyle } from 'react-native'
+import { Text, useTheme } from 'react-native-paper'
+
+type Props = {
+  title: string
+  subtitle: string
+  style?: ViewStyle
+}
+
+const Error = ({ title, subtitle, style }: Props) => {
+  const theme = useTheme()
+
+  return (
+    <View style={[style, styles.Container]}>
+      <Text
+        style={[{ color: theme.colors.error }, styles.Text]}
+        variant="displaySmall"
+      >
+        {title}
+      </Text>
+      <Text
+        style={[styles.Text, { color: theme.colors.onBackground }]}
+        variant="bodyLarge"
+      >
+        {subtitle}
+      </Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  Text: {
+    textAlign: 'center',
+  },
+})
+
+export default Error
