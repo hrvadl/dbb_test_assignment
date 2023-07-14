@@ -17,7 +17,6 @@ type State = {
 const state = {
   files: [],
   currentPath: { path: '', prevPath: null },
-  prevPath: { path: '', prevPath: null },
   error: null,
   loading: true,
 } as State
@@ -53,7 +52,7 @@ export const fileReducer = createSlice({
 
     builder.addCase(getAllFiles.rejected, (state, action) => {
       state.loading = false
-      state.error = action.error.message ?? 'Failed to fetch all files'
+      state.error = action.error.message ?? 'Failed to fetch the files'
     })
   },
 })

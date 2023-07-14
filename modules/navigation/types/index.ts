@@ -1,8 +1,9 @@
 import { NavigatorScreenParams } from '@react-navigation/native'
 
 export type TabsParamsList = {
-  'File Explorer': undefined
+  File: undefined
   Profile: undefined
+  Create: undefined
 }
 
 export type RootStackParamsList = {

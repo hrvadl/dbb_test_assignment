@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View, ViewStyle } from 'react-native'
-import { Avatar, useTheme } from 'react-native-paper'
+import { StyleSheet, View, ViewStyle } from 'react-native'
+import { Avatar, Text, useTheme } from 'react-native-paper'
 import { File as FileType } from '../modules/file/types/file'
 
 type Props = {
@@ -12,14 +12,14 @@ const File = ({ style, file }: Props) => {
   const theme = useTheme()
 
   return (
-    <View style={[style]}>
+    <View style={[styles.Container, style]}>
       <Avatar.Icon
         icon="file"
-        size={80}
+        size={140}
         color={theme.colors.primary}
         style={{ backgroundColor: theme.colors.background }}
       />
-      <Text numberOfLines={1} style={styles.Text}>
+      <Text variant="bodyLarge" numberOfLines={1}>
         {file.name}
       </Text>
     </View>
@@ -27,8 +27,11 @@ const File = ({ style, file }: Props) => {
 }
 
 const styles = StyleSheet.create({
-  Text: {
-    fontSize: 16,
+  Container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 })
 

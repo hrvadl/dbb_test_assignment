@@ -19,11 +19,11 @@ const Folder = ({ folder, onPress, style }: Props) => {
     >
       <Avatar.Icon
         icon="folder"
-        size={80}
+        size={140}
         color={theme.colors.primary}
         style={{ backgroundColor: theme.colors.background }}
       />
-      <Text numberOfLines={1} style={styles.Text}>
+      <Text variant="bodyLarge" numberOfLines={1}>
         {folder.name}
       </Text>
     </Pressable>
@@ -36,9 +36,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  Text: {
-    fontSize: 16,
   },
 })
 

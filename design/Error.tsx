@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, ViewStyle } from 'react-native'
-import { Text, useTheme } from 'react-native-paper'
+import { Avatar, Text, useTheme } from 'react-native-paper'
 
 type Props = {
   title: string
@@ -13,6 +13,7 @@ const Error = ({ title, subtitle, style }: Props) => {
 
   return (
     <View style={[style, styles.Container]}>
+      <Avatar.Icon style={styles.Icon} icon="alert-circle" size={200} />
       <Text
         style={[{ color: theme.colors.error }, styles.Text]}
         variant="displaySmall"
@@ -39,6 +40,11 @@ const styles = StyleSheet.create({
   },
   Text: {
     textAlign: 'center',
+  },
+  Icon: {
+    marginTop: -40,
+    marginBottom: 40,
+    alignSelf: 'center',
   },
 })
 

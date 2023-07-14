@@ -14,7 +14,8 @@ const Stub = () => {
     Alert.alert('Not implemented', 'Sorry, but this screen is not available', [
       {
         text: 'OK',
-        onPress: () => navigation.navigate('Home', { screen: 'File Explorer' }),
+        onPress: () => navigation.navigate('Home', { screen: 'File' }),
+        style: 'cancel',
       },
     ])
   })

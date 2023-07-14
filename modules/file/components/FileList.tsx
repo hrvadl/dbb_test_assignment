@@ -46,7 +46,7 @@ const FileList = ({ style }: Props) => {
       <View style={styles.Container}>
         {state.files?.map((file) =>
           isFile(file) ? (
-            <File file={file} key={file.id} />
+            <File style={styles.Item} file={file} key={file.id} />
           ) : (
             <Folder
               style={styles.Item}
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   Item: {
     flexGrow: 0,
     flexShrink: 0,
-    flexBasis: '25%',
+    flexBasis: `${100 / 3}%`,
   },
   LoaderContainer: {
     flex: 1,
