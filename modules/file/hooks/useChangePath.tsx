@@ -1,5 +1,4 @@
-import { useAppDispatch } from '../../store/hooks'
-import { goBack, goForward } from '../../store/reducers/files'
+import { goBack, goForward, useAppDispatch } from '@modules/store'
 
 export const useChangePath = () => {
   const dispatch = useAppDispatch()

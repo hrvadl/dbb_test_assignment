@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
+import HomeScreen from '@screens/HomeScreen'
 import React from 'react'
-import HomeScreen from '../../../screens/HomeScreen'
 import { Stack } from '../rootStack'
 
 const headerOptions = { headerShown: false }

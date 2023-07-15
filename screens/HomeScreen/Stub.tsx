@@ -1,7 +1,7 @@
+import { RootStackParamsList } from '@modules/navigation'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { StyleSheet, View } from 'react-native'
 import { Button, Dialog, Text, useTheme } from 'react-native-paper'
-import { RootStackParamsList } from '../../modules/navigation'
 
 const Stub = () => {
   const theme = useTheme()

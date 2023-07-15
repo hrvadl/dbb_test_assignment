@@ -3,6 +3,13 @@
   "compilerOptions": {
     "strict": true,
     "typeRoots": ["./types.d.ts"],
+    "baseUrl": ".",
+     "paths": {
+      "@modules/*": ["modules/*"],
+      "@design/*": ["design/*"],
+      "@screens/*": ["screens/*"],
+      "@lib/*": ["lib/*"],
+     }
   },
   "exclude": ["__tests__/**/*-test.ts"]
 }

@@ -1,9 +1,8 @@
+import PaddedSection from '@design/PaddedSection'
+import { FileHeader, FileList } from '@modules/file'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { useTheme } from 'react-native-paper'
-import PaddedSection from '../../design/PaddedSection'
-import { FileList } from '../../modules/file'
-import FileHeader from '../../modules/file/components/FileHeader'
 
 const FileExplorerScreen = () => {
   const theme = useTheme()

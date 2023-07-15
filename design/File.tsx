@@ -1,9 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, ViewStyle } from 'react-native'
 import { Avatar, Button, Card, Text, useTheme } from 'react-native-paper'
-import { toHumanReadableDate } from '../lib/format/date'
-import { toMegabytes } from '../lib/format/size'
-import { File as FileType } from '../modules/file/types/file'
+import { toHumanReadableDate, toMegabytes } from '../lib/format'
+import { File as FileType } from '../modules/file'
 import ContextMenu from './ContextMenu'
 
 type Props = {

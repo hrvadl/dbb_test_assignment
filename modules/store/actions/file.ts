@@ -1,14 +1,11 @@
+import { AnyFile } from '@modules/file'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { AnyFile } from '../../file/types/file'
-import type { AsyncThunkConfig } from '../store'
-import {
-  GetFilesResponse,
-  isSuccessfulGetFilesResponse,
-} from '../types/addFile'
+import { AsyncThunkConfig } from '../types/store'
+import { GetFilesResponse, isSuccessfulGetFilesResponse } from './types/addFile'
 import {
   DeleteFileResponse,
   isSuccessfulDeleteResponse,
-} from '../types/deleteFile'
+} from './types/deleteFile'
 
 export const FILES_PREFIX = 'files'
 

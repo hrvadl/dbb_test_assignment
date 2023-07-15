@@ -1,6 +1,5 @@
+import { getAllFiles, useAppDispatch, useAppSelector } from '@modules/store'
 import { useEffect } from 'react'
-import { getAllFiles } from '../../store/actions/file'
-import { useAppDispatch, useAppSelector } from '../../store/hooks'
 
 export const useFiles = () => {
   const dispatch = useAppDispatch()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pressable, StyleSheet, ViewStyle } from 'react-native'
 import { Avatar, Button, Card, Text, useTheme } from 'react-native-paper'
-import { Folder as FolderType } from '../modules/file/types/file'
+import { Folder as FolderType } from '../modules/file'
 import ContextMenu from './ContextMenu'
 
 type Props = {

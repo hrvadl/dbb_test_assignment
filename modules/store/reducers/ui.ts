@@ -1,15 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { deleteFile } from '../actions/file'
-
-type State = {
-  snackBarMessage: string | null
-}
+import { UiReducerState } from './types/uiReducer'
 
 export const UI_PREFIX = 'ui'
 
 const state = {
   snackBarMessage: null,
-} as State
+} as UiReducerState
 
 export const uiReducer = createSlice({
   name: UI_PREFIX,

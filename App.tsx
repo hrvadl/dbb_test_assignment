@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider as StoreProvider } from 'react-redux'
 import { theme } from './design/theme'
 import { NavigationProvider } from './modules/navigation'
-import { store } from './modules/store/store'
+import { store } from './modules/store'
 
 export default function App() {
   return (

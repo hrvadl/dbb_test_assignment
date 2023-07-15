@@ -1,5 +1,4 @@
-import { deleteFile } from '../../store/actions/file'
-import { useAppDispatch } from '../../store/hooks'
+import { deleteFile, useAppDispatch } from '@modules/store'
 
 export const useDeleteFile = () => {
   const dispatch = useAppDispatch()

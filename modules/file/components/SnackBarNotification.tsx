@@ -1,8 +1,7 @@
+import { hideMessage, useAppDispatch, useAppSelector } from '@modules/store'
 import React from 'react'
 import { ViewStyle } from 'react-native'
 import { Portal, Snackbar } from 'react-native-paper'
-import { useAppDispatch, useAppSelector } from '../../store/hooks'
-import { hideMessage } from '../../store/reducers/ui'
 
 type Props = {
   style?: ViewStyle

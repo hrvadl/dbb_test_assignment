@@ -1,4 +1,4 @@
-import { AnyFile } from '../../file/types/file'
+import { AnyFile } from '@modules/file/types/file'
 import { FailedResponse } from './deleteFile'
 
 type GetFileSuccessResponse = {

@@ -1,25 +1,13 @@
 import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit'
-import { AnyFile } from '../../file/types/file'
 import { FILES_PREFIX, deleteFile, getAllFiles } from '../actions/file'
-
-type FilePath = {
-  path: string
-  prevPath: FilePath | null
-}
-
-type State = {
-  files: AnyFile[]
-  currentPath: FilePath
-  error: string | null
-  loading: boolean
-}
+import { FileReducerState } from './types/fileReducer'
 
 const state = {
   files: [],
   currentPath: { path: '', prevPath: null },
   error: null,
   loading: true,
-} as State
+} as FileReducerState
 
 export const fileReducer = createSlice({
   name: FILES_PREFIX,
