@@ -26,10 +26,12 @@ const FileList = ({ style }: Props) => {
 
   if (state.error) {
     return (
-      <Error title="Oops, something went wrong..." subtitle={state.error} />
+      <Error
+        title="Oops, something went wrong..."
+        subtitle="Maybe your token has expired"
+      />
     )
   }
-
   if (state.loading) {
     return (
       <View style={styles.LoaderContainer}>
@@ -45,7 +47,7 @@ const FileList = ({ style }: Props) => {
   }
 
   return (
-    <ScrollView style={style}>
+    <ScrollView showsVerticalScrollIndicator={false} style={style}>
       <View style={styles.Container}>
         {state.files?.map((file) =>
           isFile(file) ? (
@@ -74,6 +76,7 @@ const FileList = ({ style }: Props) => {
 const styles = StyleSheet.create({
   Container: {
     display: 'flex',
+    flexWrap: 'wrap',
     flexDirection: 'row',
   },
   Item: {

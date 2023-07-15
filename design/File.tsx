@@ -1,6 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, ViewStyle } from 'react-native'
 import { Avatar, Button, Card, Text, useTheme } from 'react-native-paper'
+import { toHumanReadableDate } from '../lib/format/date'
+import { toMegabytes } from '../lib/format/size'
 import { File as FileType } from '../modules/file/types/file'
 import ContextMenu from './ContextMenu'
 
@@ -35,10 +37,10 @@ const File = ({ style, file, onDelete }: Props) => {
             File path: {file.path_lower}
           </Text>
           <Text style={styles.ModalText} variant="bodyLarge">
-            Size: {file.size}
+            Size: {toMegabytes(file.size)} MB
           </Text>
           <Text style={styles.ModalText} variant="bodyLarge">
-            Last modified: {file.client_modified}
+            Last modified: {toHumanReadableDate(file.client_modified)}
           </Text>
           <Button mode="outlined" onPress={removeFileHandler}>
             Delete file

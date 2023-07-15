@@ -8,9 +8,9 @@ export const request = async (
     ...options,
     headers: { ...options?.headers, 'Content-Type': 'application/json' },
   })
-  const json = result.json()
+  const json = await result.json()
 
   if (result.ok) return json
 
-  throw new HttpError('API call failed', result.status)
+  throw new HttpError('API call failed', result.status, { cause: result })
 }
