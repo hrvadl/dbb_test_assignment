@@ -3,14 +3,14 @@
 ## TL;DR
 
 - Ensure you have node.js **18.6.0** installed
-- Ensure you have expo installed
+- Ensure you have [expo](https://docs.expo.dev/) v. 48 installed
 - Run `npm install` in your terminal from the root of the project
   - **Optional**: Run `npm run lint` to lint the project
   - **Optional**: Run `npm run format` to format the code
 - Ensure you've specified all the needed variables in your `.env` file. There's an example of all the required variables in `.env.example`
 - Start the app with following command: `npx expo start`
   - **NOTE**: After you've changed something in `.env` file there can be a chance that old variables is still cached. So you need to run `npx expo start --clear` instead.
-  - **NOTE**: If you ran into the problem, that your API calls fail, you should check whether the your provided token not expired & you cleaned the cache.
+  - **NOTE**: If you ran into the problem, that your API calls fail, you should check whether provided token is not expired & you've cleaned the cache.
 
 ## Documentation
 
@@ -39,3 +39,4 @@
 ![Alt text](assets/screens/5.png)
 ![Alt text](assets/screens/6.png)
 ![Alt text](assets/screens/7.png)
+![Alt text](assets/screens/8.png)
