@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import { Avatar, useTheme } from 'react-native-paper'
-import { TabsParamsList } from '../../modules/navigation'
-import FileExplorerScreen from './FileExplorerScreen'
-import Stub from './Stub'
+import { TabsParamsList } from '../modules/navigation'
+import FileExplorerScreen from './HomeScreen/FileExplorerScreen'
+import Stub from './HomeScreen/Stub'
 
 const Tab = createBottomTabNavigator<TabsParamsList>()
 
