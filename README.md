@@ -14,6 +14,14 @@
 
 ## Documentation
 
+### Tech stack:
+
+- React Navigation
+- React Native Paper(component library)
+- Redux & Redux toolkit
+
+### Project structure
+
 `design` folder contains all the UI components without logic, which can be easily reused across the application. Also it contains theme configuration as well.
 
 `lib` folder contains the utility functions, such as wrapper around the `fetch`, format functions etc.
@@ -30,3 +38,4 @@
 ![Alt text](assets/screens/4.png)
 ![Alt text](assets/screens/5.png)
 ![Alt text](assets/screens/6.png)
+![Alt text](assets/screens/7.png)
