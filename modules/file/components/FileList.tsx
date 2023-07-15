@@ -5,7 +5,7 @@ import { ActivityIndicator, useTheme } from 'react-native-paper'
 import { useChangePath } from '../hooks/useChangePath'
 import { useDeleteFile } from '../hooks/useDeleteFile'
 import { useFiles } from '../hooks/useFiles'
-import { Folder as FolderType, isFile } from '../types/file'
+import { isFile } from '../types/file'
 import SnackBarNotification from './SnackBarNotification'
 
 type Props = {
@@ -18,10 +18,6 @@ const FileList = ({ style }: Props) => {
   const { goForwardHandler } = useChangePath()
   const { deleteFileHandler } = useDeleteFile()
 
-  const changeCurrentPathHandler = (folder: FolderType) => {
-    goForwardHandler(folder.path_lower)
-  }
-
   if (state.error) {
     return (
       <Error
@@ -30,6 +26,7 @@ const FileList = ({ style }: Props) => {
       />
     )
   }
+
   if (state.loading) {
     return (
       <View style={styles.LoaderContainer}>
@@ -59,7 +56,7 @@ const FileList = ({ style }: Props) => {
             <Folder
               onDelete={deleteFileHandler}
               style={styles.Item}
-              onPress={changeCurrentPathHandler}
+              onPress={goForwardHandler}
               folder={file}
               key={file.id}
             />

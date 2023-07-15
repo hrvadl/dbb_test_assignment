@@ -1,4 +1,5 @@
 import { goBack, goForward, useAppDispatch } from '@modules/store'
+import { Folder } from '../types/file'
 
 export const useChangePath = () => {
   const dispatch = useAppDispatch()
@@ -7,8 +8,8 @@ export const useChangePath = () => {
     dispatch(goBack())
   }
 
-  const goForwardHandler = (path: string) => {
-    dispatch(goForward(path))
+  const goForwardHandler = (folder: Folder) => {
+    dispatch(goForward(folder.path_lower))
   }
 
   return {
