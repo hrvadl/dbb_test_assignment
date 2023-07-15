@@ -17,9 +17,8 @@ export const uiReducer = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(deleteFile.rejected, (state, action) => {
-      state.snackBarMessage =
-        action.error.message ?? 'Failed to delete file/folder'
+    builder.addCase(deleteFile.rejected, (state) => {
+      state.snackBarMessage = 'Failed to delete file/folder'
     })
   },
 })
