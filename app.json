@@ -1,7 +1,6 @@
 {
   "expo": {
     "name": "test-assignment",
-    "jsEngine": "jsc",
     "slug": "test-assignment",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
