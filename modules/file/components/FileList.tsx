@@ -5,8 +5,10 @@ import Error from '../../../design/Error'
 import File from '../../../design/File'
 import Folder from '../../../design/Folder'
 import { useChangePath } from '../hooks/useChangePath'
+import { useDeleteFile } from '../hooks/useDeleteFile'
 import { useFiles } from '../hooks/useFiles'
 import { Folder as FolderType, isFile } from '../types/file'
+import SnackBarNotification from './SnackBarNotification'
 
 type Props = {
   style?: ViewStyle
@@ -16,6 +18,7 @@ const FileList = ({ style }: Props) => {
   const theme = useTheme()
   const { state } = useFiles()
   const { goForwardHandler } = useChangePath()
+  const { deleteFileHandler } = useDeleteFile()
 
   const changeCurrentPathHandler = (folder: FolderType) => {
     goForwardHandler(folder.path_lower)
@@ -46,9 +49,15 @@ const FileList = ({ style }: Props) => {
       <View style={styles.Container}>
         {state.files?.map((file) =>
           isFile(file) ? (
-            <File style={styles.Item} file={file} key={file.id} />
+            <File
+              onDelete={deleteFileHandler}
+              style={styles.Item}
+              file={file}
+              key={file.id}
+            />
           ) : (
             <Folder
+              onDelete={deleteFileHandler}
               style={styles.Item}
               onPress={changeCurrentPathHandler}
               folder={file}
@@ -56,6 +65,7 @@ const FileList = ({ style }: Props) => {
             />
           )
         )}
+        <SnackBarNotification />
       </View>
     </ScrollView>
   )

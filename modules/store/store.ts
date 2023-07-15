@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { config } from '../../lib/config'
 import { HTTP } from '../../lib/request'
 import { fileReducer } from './reducers/files'
+import { uiReducer } from './reducers/ui'
 
 const extraArgument = {
   HTTP,
@@ -11,6 +12,7 @@ const extraArgument = {
 export const store = configureStore({
   reducer: {
     file: fileReducer.reducer,
+    ui: uiReducer.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: { extraArgument } }),

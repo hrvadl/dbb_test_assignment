@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit'
 import { AnyFile } from '../../file/types/file'
-import { FILES_PREFIX, getAllFiles } from '../actions/actions'
+import { FILES_PREFIX, deleteFile, getAllFiles } from '../actions/file'
 
 type FilePath = {
   path: string
@@ -40,13 +40,8 @@ export const fileReducer = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getAllFiles.pending, (state) => {
-      state.loading = true
-    })
-
     builder.addCase(getAllFiles.fulfilled, (state, action) => {
       state.files = action.payload
-      state.error = null
       state.loading = false
     })
 
@@ -54,6 +49,23 @@ export const fileReducer = createSlice({
       state.loading = false
       state.error = action.error.message ?? 'Failed to fetch the files'
     })
+
+    builder.addCase(deleteFile.rejected, (state) => {
+      state.loading = false
+    })
+
+    builder.addCase(deleteFile.fulfilled, (state, action) => {
+      state.files = state.files.filter((file) => file.id != action.payload.id)
+      state.loading = false
+    })
+
+    builder.addMatcher(
+      isAnyOf(getAllFiles.pending, deleteFile.pending),
+      (state) => {
+        state.error = null
+        state.loading = true
+      }
+    )
   },
 })
 
