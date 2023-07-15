@@ -7,7 +7,7 @@ export const useFiles = () => {
 
   useEffect(() => {
     dispatch(getAllFiles(state.currentPath.path))
-  }, [state.currentPath.path])
+  }, [state.currentPath.path, dispatch])
 
   return { state }
 }
